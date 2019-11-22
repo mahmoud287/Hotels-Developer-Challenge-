@@ -27,17 +27,15 @@ export default new Vuex.Store({
     setTotalNights(state, payload) {
       state.totalNights = payload
     },
-    sortByName(state) {
+    sortBy(state, payload) {
       state.filterdHotelsData.sort((a, b) => {
-        if (a.name < b.name) return -1
-        if (a.name > b.name) return 1
-        return 0
-      })
-    },
-    sortByPrice(state) {
-      state.filterdHotelsData.sort((a, b) => {
-        if (a.price < b.price) return -1
-        if (a.price > b.price) return 1
+        if (payload == 'name') {
+          if (a.name < b.name) return -1
+          if (a.name > b.name) return 1
+        } else if (payload == 'price') {
+          if (a.price < b.price) return -1
+          if (a.price > b.price) return 1
+        }
         return 0
       })
     }

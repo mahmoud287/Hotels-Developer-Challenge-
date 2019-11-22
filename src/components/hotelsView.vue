@@ -8,9 +8,7 @@
           </v-col>
           <v-col cols="12" md="6" lg="2">
             <v-row justify="end">
-              <v-btn small color="#e74c3c" outlined @click="sortByName"
-                >Sort by Name</v-btn
-              >
+              <v-btn small color="#e74c3c" outlined @click="sortBy('name')">Sort by Name</v-btn>
             </v-row>
           </v-col>
           <v-col cols="12" md="6" lg="2">
@@ -20,9 +18,8 @@
                 color="#2980b9"
                 class="ml-2"
                 outlined
-                @click="sortByPrice"
-                >Sort by Price</v-btn
-              >
+                @click="sortBy('price')"
+              >Sort by Price</v-btn>
             </v-row>
           </v-col>
         </v-row>
@@ -33,10 +30,7 @@
         <v-card>
           <v-row class="px-5 mb-8">
             <v-col cols="10">
-              <v-text-field
-                label="Search by Name"
-                v-model="hotelName"
-              ></v-text-field>
+              <v-text-field label="Search by Name" v-model="hotelName"></v-text-field>
             </v-col>
           </v-row>
           <v-row class="px-5">
@@ -105,7 +99,7 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(['sortByName', 'sortByPrice'])
+    ...mapMutations(['sortBy'])
   }
 }
 </script>
