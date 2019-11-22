@@ -1,13 +1,21 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-container>
+      <searchBar class="mb-8" />
+      <hotelsView />
+    </v-container>
+  </v-app>
 </template>
-
+<script>
+import hotelsView from './components/hotelsView'
+import searchBar from './components/searchBar'
+export default {
+  components: {
+    hotelsView,
+    searchBar
+  }
+}
+</script>
 <style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -19,7 +27,6 @@
 
 #nav {
   padding: 30px;
-
   a {
     font-weight: bold;
     color: #2c3e50;
