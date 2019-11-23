@@ -24,10 +24,7 @@
                 v-on="on"
               ></v-text-field>
             </template>
-            <v-date-picker
-              v-model="fromDate"
-              @input="fromModel = false"
-            ></v-date-picker>
+            <v-date-picker v-model="fromDate" @input="fromModel = false"></v-date-picker>
           </v-menu>
         </v-col>
         <v-col cols="12" md="4" class="px-5">
@@ -49,10 +46,7 @@
                 v-on="on"
               ></v-text-field>
             </template>
-            <v-date-picker
-              v-model="toDate"
-              @input="toModel = false"
-            ></v-date-picker>
+            <v-date-picker v-model="toDate" @input="toModel = false"></v-date-picker>
           </v-menu>
         </v-col>
         <v-col cols="12" md="4" class="px-5">
@@ -68,6 +62,7 @@
 <script>
 import { mapActions, mapState } from 'vuex'
 import { bus } from '../main'
+
 export default {
   data() {
     return {
@@ -82,11 +77,13 @@ export default {
   },
   methods: {
     ...mapActions(['fetchHotelsData', 'search_on_hotels']),
+
     //fetch hotels data from the vuex action method and filter it with dates
     _fetchHotelsData() {
       //check if the form is validated or not
       if (this.$refs.form.validate()) {
         this.loading = true
+
         //first time  will call the api with the "fetchHotelsData" method if not will just filter the array with dates
         const dates = {
           startDate: this.fromDate,

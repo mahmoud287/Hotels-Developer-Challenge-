@@ -1,4 +1,4 @@
-# hotle
+# Hotels / Developer Challenge
 
 ## Project setup
 
@@ -18,14 +18,10 @@ npm run serve
 npm run build
 ```
 
-### Run your tests
-
-```
-npm run test
-```
-
 ### Lints and fixes files
 
 ```
 npm run lint
 ```
+
+### Using node version v12.9.1 and npm 6.12.0

@@ -9,9 +9,9 @@ import axios from 'axios'
 var moment = require('moment')
 
 export default new Vuex.Store({
-  // hotelsData --> all hotels data.
-  // filterdHotelsData --> hotels data filterd with the Two Dates.
+  //(state var) hotelsData --> all hotels data.
 
+  //(state var) filterdHotelsData --> hotels data filterd with the Two Dates.
   state: { hotelsData: null, filterdHotelsData: [], totalNights: null },
   mutations: {
     setHotelsData(state, payloads) {
@@ -20,6 +20,7 @@ export default new Vuex.Store({
     setHotelsFilterd(state, payload) {
       state.filterdHotelsData.push(payload)
     },
+
     //to empity the filterd array when we repeating the search
     setHotelsFilterdToDefault(state) {
       state.filterdHotelsData.length = 0
@@ -53,6 +54,7 @@ export default new Vuex.Store({
           console.log('TCL: fetchHotelsData -> err', err)
         })
     },
+
     //empity the filterd array then filter data with dates using Moment js
     search_on_hotels({ commit, state }, payloads) {
       commit('setHotelsFilterdToDefault')
